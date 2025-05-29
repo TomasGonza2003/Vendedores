@@ -13,6 +13,5 @@ public interface VendedorRepository extends JpaRepository<Vendedor, Long> {
     @Query("SELECT DISTINCT v FROM Vendedor v JOIN v.sucursalesAsignadas sa WHERE sa.idSucursal = :idSucursal")
     List<Vendedor> findBySucursalAsignada(@Param("idSucursal") Long idSucursal);
 
-    // Spring Data JPA infiere la query por el nombre del método
     Vendedor findByCodigoEmpleado(String codigoEmpleado);
 }
